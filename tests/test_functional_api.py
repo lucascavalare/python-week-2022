@@ -17,7 +17,7 @@ def test_create_beer_via_api():
             "cost": 2,
         },
     )
-    assert response.status_code == 201
+    assert response.status_code == 200
     result = response.json()
     assert result["name"] == "Skol"
     assert result["id"] == 1
