@@ -8,7 +8,7 @@ client = TestClient(api)
 
 def test_create_beer_via_api():
     response = client.post(
-        "/beers/",
+        "/beers",
         json={
             "name": "Skol",
             "style": "KornPA",
