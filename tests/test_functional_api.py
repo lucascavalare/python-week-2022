@@ -21,10 +21,3 @@ def test_create_beer_via_api():
     result = response.json()
     assert result["name"] == "Skol"
     assert result["id"] == 1
-
-
-def test_list_beers():
-    response = client.get("/beers")
-    assert response.status_code == 200
-    result = response.json()
-    assert len(result) == 0
