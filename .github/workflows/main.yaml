@@ -64,7 +64,7 @@ jobs:
           args: push lucascavalare85/beerlog:2.0
 
       - name: Deploy da APP para o K8s
-        uses: docker/docker-desktop-action@master
+        uses: docker/build-push-action@master
         env: 
           RELEASE_IMAGE: lucascavalare85/beerlog:2.0
           KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
@@ -72,7 +72,7 @@ jobs:
           args: apply -f kubernetes/deployment.yaml --record
 
       - name: Deploy do service da APP
-        uses: docker/docker-desktop-action@master
+        uses: docker/build-push-action@master
         env: 
           RELEASE_IMAGE: lucascavalare85/beerlog:2.0
           KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
