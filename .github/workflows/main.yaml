@@ -52,8 +52,8 @@ jobs:
       - name: Login no Docker Hub
         uses: actions-hub/docker/login@master
         env:
-          DOCKER__USERNAME: ${{ secrets.DOCKER_HUB_USERNAME }}
-          DOCKER_PASSWORD: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
+          DOCKER__USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Buildando a imagem
         run: docker build -t linuxtips/beerlog:2.0 --file docker/Dockerfile .
