@@ -52,7 +52,7 @@ jobs:
       - name: Login no Docker Hub
         uses: actions-hub/docker/login@master
         env:
-          DOCKER__USERNAME: ${{ secrets.DOCKER_USERNAME }}
+          DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Buildando a imagem
