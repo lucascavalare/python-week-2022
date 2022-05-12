@@ -56,7 +56,7 @@ jobs:
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
 
       - name: Buildando a imagem
-        run: docker build -t lucascavalare/beerlog:2.0 --file docker/Dockerfile .
+        run: docker build -t lucascavalare85/beerlog:2.0 --file docker/Dockerfile .
 
       - name: Push para o Docker Hub
         uses: actions-hub/docker@master
