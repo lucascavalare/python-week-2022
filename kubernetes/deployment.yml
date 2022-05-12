@@ -18,7 +18,7 @@ spec:
         app: beerlog
     spec:
       containers:
-      - image: beerlog:1.0
+      - image: lucascavalare85/beerlog:2.0
         name: beerlog
 	ports:
 	- containerPort: 8080
