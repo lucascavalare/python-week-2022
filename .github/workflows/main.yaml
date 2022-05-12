@@ -61,7 +61,6 @@ jobs:
       - name: Push para o Docker Hub
         uses: actions-hub/docker@master
         with:
-	  tags: lucascavalare85/beerlog:2.0
           args: push lucascavalare85/beerlog:2.0
 
       - name: Deploy da APP para o K8s
