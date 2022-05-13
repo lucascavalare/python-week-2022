@@ -69,7 +69,7 @@ jobs:
           RELEASE_IMAGE: lucascavalare85/beerlog:2.0
           KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
         with:
-          args: apply -f kubernetes/deployment.yaml --record
+          run: kubectl apply -f kubernetes/deployment.yaml --record
 
       - name: Deploy do service da APP
         uses: docker/build-push-action@master
@@ -77,4 +77,4 @@ jobs:
           RELEASE_IMAGE: lucascavalare85/beerlog:2.0
           KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
         with:
-          args: apply -f kubernetes/service.yaml --record
+          run: kubectl apply -f kubernetes/service.yaml --record
