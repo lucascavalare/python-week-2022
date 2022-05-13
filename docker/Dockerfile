@@ -26,7 +26,7 @@ ENV PATH="$POETRY_HOME/bin:$PATH"
 # Import our project files
 WORKDIR $APP_PATH
 COPY ./poetry.lock ./pyproject.toml ./
-COPY ./$APP_NAME ./$APP_NAME
+ADD ./$APP_NAME ./$APP_NAME
 
 # Stage: development
 FROM staging as development
