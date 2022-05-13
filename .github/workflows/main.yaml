@@ -59,7 +59,7 @@ jobs:
         run: docker build -t lucascavalare85/beerlog:2.0 --file docker/Dockerfile .
 
       - name: Push para o Docker Hub
-        uses: actions-hub/docker@v2
+        uses: actions-hub/docker@master
         with:
           args: push docker.io/lucascavalare85/beerlog:2.0
 
