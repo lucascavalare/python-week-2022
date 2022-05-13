@@ -50,7 +50,7 @@ jobs:
       - uses: actions/checkout@v2
 
       - name: Login no Docker Hub
-        uses: actions-hub/docker/login@master
+        uses: actions-hub/docker/login@main
         env:
           DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
           DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
@@ -59,12 +59,12 @@ jobs:
         run: docker build -t lucascavalare85/beerlog:2.0 --file docker/Dockerfile .
 
       - name: Push para o Docker Hub
-        uses: actions-hub/docker@master
+        uses: actions-hub/docker@main
         with:
           args: push docker.io/lucascavalare85/beerlog:2.0
 
       - name: Deploy da APP para o K8s
-        uses: docker/build-push-action@master
+        uses: docker/build-push-action@main
         env: 
           RELEASE_IMAGE: lucascavalare85/beerlog:2.0
           KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
@@ -72,7 +72,7 @@ jobs:
           args: apply -f kubernetes/deployment.yaml --record
 
       - name: Deploy do service da APP
-        uses: docker/build-push-action@master
+        uses: docker/build-push-action@main
         env: 
           RELEASE_IMAGE: lucascavalare85/beerlog:2.0
           KUBE_CONFIG_DATA: ${{ secrets.KUBE_CONFIG_DATA }}
